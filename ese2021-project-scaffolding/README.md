@@ -1,7 +1,8 @@
 # ese2021-project-scaffolding
 
 ## About
-This project contains an Angular frontend and a NodeJs backend which uses Express as a framework. The website displays todolists which can be customized with items to complete. Every list and item is saved in a database, meaning they will still be available after you restart the website or the backend. 
+This project contains an Angular frontend and a NodeJs backend which uses Express as a framework. 
+As a logged in user, you can create posts and buy items in the fan-shop. There are admins that moderate the site. You can comment on a post and express your opinion. Images can be posted and your favourite places in Bern can be shared.
 
 ## Prerequisite
 First of all you have to install [NodeJs](https://nodejs.org/de/download/), which comes per default with the packet manager [npm](https://www.npmjs.com/get-npm).

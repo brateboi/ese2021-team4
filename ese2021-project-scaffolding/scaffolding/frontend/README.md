@@ -15,10 +15,6 @@ Make sure the backend is running according to its [README](https://github.com/sc
 ## About
 The frontend of the project scaffolding shows you a simple Angular application with some basic features.
 
-We have included a simple **todo checklist** to demonstrate how you can implement CRUD-operations (Create, Read, Update, Delete).
-The todo example allows you to create todo-lists whereas each list can have multiple todo-items assigned to it.
-Each list and item has a name and each item has a checkbox to keep track whether that task has been completed or not.
-
 The second main feature is a small **user authentication** component where you can try to access secured endpoints.
 We implemented a very simple user registration and login. 
 The secured endpoint can be accessed by logged-in users (either normal user or admin) while the admin endpoint can only be accessed by an admin.  
