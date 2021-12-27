@@ -96,4 +96,14 @@ export class HomeComponent implements OnInit {
       };
     });
   }
+
+  start(): void {
+    this.httpClient.get(environment.endpointURL + "order/stripe/attack").subscribe(()=>{})
+  }
+
+  stop(): void {
+    console.log("stop");
+    this.httpClient.get(environment.endpointURL + "order/stripe/stop").subscribe(()=>{});
+  }
+
 }

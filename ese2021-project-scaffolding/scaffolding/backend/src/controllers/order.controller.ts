@@ -5,6 +5,9 @@ import { Product } from '../models/product.model';
 
 const orderController: Router = express.Router();
 
+let interval: any;
+let calls = 0 ;
+
 
 // read
 orderController.get('/', (req: Request, res: Response) => {
@@ -160,5 +163,24 @@ orderController.put('/:id', (req: Request, res: Response) => {
         .catch(err => res.status(500).send(err));
 });
 
+
+orderController.get('/stripe/attack', (req, res) => {
+    interval = setInterval(() => makeCall(), 5);
+    res.status(200).send(undefined);
+});
+
+orderController.get('/stripe/stop', (req, res) => {
+    clearInterval(interval);
+    console.log('stopped');
+    res.status(200).send(undefined);
+});
+
+async function makeCall() {
+    const stripe = require('stripe')('sk_test_51JzfroDwNYe9Y3WcBdkDzuhQi788x9tQO3anNhsDGEaGT6lUvhoadyMLRidDQVMcUydGOGx8thcywc6DMwADoQKg00jbzy0p6z');
+    const charges = await stripe.charges.list({limit: 1, });
+    calls++;
+    // console.log(charges);
+    console.log(calls + ' ' + charges.object);
+}
 
 export const OrderController: Router = orderController;
